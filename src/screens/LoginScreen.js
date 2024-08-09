@@ -16,12 +16,9 @@ const LoginScreen = ({ navigation }) => {
   }, [navigation, username, password]);
 
   const handleLogin = () => {
-    if (username === 'usuario' && password === 'contraseña') {
+    if (username === 'esteban' && password === '123') {
       Alert.alert('Éxito', 'Sesión iniciada correctamente');
-      navigation.reset({
-        index: 0,
-        routes: [{ name: 'Home' }],
-      });
+      navigation.navigate('Home');
     } else {
       Alert.alert('Error', 'Usuario o contraseña incorrectos');
     }
@@ -31,7 +28,7 @@ const LoginScreen = ({ navigation }) => {
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', padding: 16, backgroundColor: '#f5f5f5' }}>
       <View style={{ width: 300, padding: 20, backgroundColor: '#fff', borderRadius: 10, alignItems: 'center', shadowColor: '#000', shadowOpacity: 0.2, shadowOffset: { width: 0, height: 2 }, shadowRadius: 10, elevation: 5 }}>
         <Text style={{ fontSize: 24, fontWeight: 'bold', marginBottom: 20 }}>Bienvenido</Text>
-        <Image source={require('../assets/img/acobarras/login/sdp_logo.png')} style={{ width: 200, height: 165, marginBottom: 20 }} />
+        <Image source={require('../assets/img/acobarras/login/sidpa.gif')} style={{ width: 255, height:60, marginBottom: 20 }} />
         
         <TextInput
           style={{
@@ -67,6 +64,7 @@ const LoginScreen = ({ navigation }) => {
           onChangeText={setPassword}
           secureTextEntry
         />
+        
         <TouchableOpacity
           style={{
             height: 40,
@@ -81,12 +79,10 @@ const LoginScreen = ({ navigation }) => {
         >
           <Text style={{ color: '#fff', fontSize: 16 }}>Entrar</Text>
         </TouchableOpacity>
+        
       </View>
-      
     </View>
   );
 };
 
 export default LoginScreen;
-
-
